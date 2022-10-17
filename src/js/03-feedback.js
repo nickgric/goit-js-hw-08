@@ -25,6 +25,10 @@ const formInput = () => {
 
 const formSubmit = event => {
   event.preventDefault();
+  if (form.elements.email.value === '' || form.elements.message.value === '') {
+    alert('Все поля формы должны быть заполнены!');
+    return;
+  }
   let email = form.elements.email.value;
   let message = form.elements.message.value;
   const savedFormData = {
